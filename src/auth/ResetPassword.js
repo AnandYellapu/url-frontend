@@ -34,7 +34,7 @@ const ResetPassword = () => {
       try {
         console.log('Reset password request initiated with token:', token);
 
-        const response = await axios.post(`https://url-shortener-ax8r.onrender.com/api/users/reset-password/${token}`, { token, newPassword: values.password });
+        const response = await axios.post(`https://url-backend-5vo9.onrender.com/api/users/reset-password/${token}`, { token, newPassword: values.password });
         console.log('Reset password response:', response.data);
 
         setSnackbarMessage(response.data.message);

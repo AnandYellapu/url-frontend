@@ -51,7 +51,7 @@ const URLCreationForm = () => {
     try {
       const authToken = localStorage.getItem('authToken');
       const response = await axios.post(
-        'https://url-shortener-ax8r.onrender.com/api/urls/create-url',
+        'https://url-backend-5vo9.onrender.com/api/urls/create-url',
         { longURL, expiryDate },
         { headers: { Authorization: `Bearer ${authToken}` } }
       );
@@ -325,7 +325,7 @@ export default URLCreationForm;
 //     try {
 //       const authToken = localStorage.getItem('authToken');
 //       const response = await axios.post(
-//         'https://url-shortener-ax8r.onrender.com/api/urls/create-url',
+//         'https://url-backend-5vo9.onrender.com/api/urls/create-url',
 //         { longURL, expiryDate },
 //         { headers: { Authorization: `Bearer ${authToken}` } }
 //       );

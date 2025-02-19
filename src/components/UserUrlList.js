@@ -42,7 +42,7 @@ const UserURLList = () => {
           return;
         }
   
-        const response = await axios.get('https://url-shortener-ax8r.onrender.com/api/urls/user-url-list', {
+        const response = await axios.get('https://url-backend-5vo9.onrender.com/api/urls/user-url-list', {
           headers: { Authorization: `Bearer ${authToken}` },
         });
   
@@ -142,7 +142,7 @@ const UserURLList = () => {
       setFilteredUrlList(updatedList); // Update filtered list as well
   
       // Send updated copy count to the server
-      await axios.post('https://url-shortener-ax8r.onrender.com/api/urls/copy-count', {
+      await axios.post('https://url-backend-5vo9.onrender.com/api/urls/copy-count', {
         urlId,
         copyCount: urlToCopy.copyCount + 1, // Send incremented count
       });
@@ -167,7 +167,7 @@ const UserURLList = () => {
     console.log('Deleting URL with ID:', deleteUrlId); // Debugging log
   
     try {
-      await axios.delete(`https://url-shortener-ax8r.onrender.com/api/urls/${deleteUrlId}`);
+      await axios.delete(`https://url-backend-5vo9.onrender.com/api/urls/${deleteUrlId}`);
       setUrlList((prevUrlList) => prevUrlList.filter((url) => url._id !== deleteUrlId));
       setDeleteUrlId(null);
       setDeleteDialogOpen(false);
@@ -180,7 +180,7 @@ const UserURLList = () => {
 
   const handleBulkDelete = async () => {
     try {
-      await axios.delete('https://url-shortener-ax8r.onrender.com/api/urls/bulk', { data: { urlIds: selectedUrls } });
+      await axios.delete('https://url-backend-5vo9.onrender.com/api/urls/bulk', { data: { urlIds: selectedUrls } });
       const updatedUrlList = urlList.filter((url) => !selectedUrls.includes(url._id));
       setUrlList(updatedUrlList);
       setSelectedUrls([]);

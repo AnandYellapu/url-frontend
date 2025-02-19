@@ -28,7 +28,7 @@
 //     const fetchUrlList = async () => {
 //       setLoading(true);
 //       try {
-//         const response = await axios.get('https://url-shortener-ax8r.onrender.com/api/urls/url-list');
+//         const response = await axios.get('https://url-backend-5vo9.onrender.com/api/urls/url-list');
 //         setUrlList(response.data);
 //         setTotalPages(Math.ceil(response.data.length / 10));
 //         applySorting(response.data, sortBy, sortOrder); // Apply sorting initially
@@ -71,7 +71,7 @@
 //       setTimeout(() => {
 //         setCopiedUrlId(null);
 //       }, 2000);
-//       await axios.post('https://url-shortener-ax8r.onrender.com/api/urls/copy-count', {
+//       await axios.post('https://url-backend-5vo9.onrender.com/api/urls/copy-count', {
 //         urlId,
 //         copyCount,
 //       });
@@ -84,7 +84,7 @@
 
 //   const handleDeleteUrl = async (urlId) => {
 //     try {
-//       const response = await axios.delete(`https://url-shortener-ax8r.onrender.com/api/urls/${urlId}`, {
+//       const response = await axios.delete(`https://url-backend-5vo9.onrender.com/api/urls/${urlId}`, {
 //         headers: {
 //           Authorization: `Bearer ${localStorage.getItem('authToken')}`, // Include token if needed
 //         },
@@ -107,7 +107,7 @@
 
 //   const handleBulkDelete = async () => {   //eslint-disable-line
 //     try {
-//       await axios.delete('https://url-shortener-ax8r.onrender.com/api/urls/bulk', { data: { urlIds: selectedUrls } });
+//       await axios.delete('https://url-backend-5vo9.onrender.com/api/urls/bulk', { data: { urlIds: selectedUrls } });
 //       const updatedUrlList = urlList.filter((url) => !selectedUrls.includes(url._id));
 //       setUrlList(updatedUrlList);
 //       setFilteredUrlList(updatedUrlList);
@@ -121,7 +121,7 @@
 
 //   const handleDeleteAll = async () => {       //eslint-disable-line
 //     try {
-//       await axios.delete('https://url-shortener-ax8r.onrender.com/api/urls/all');
+//       await axios.delete('https://url-backend-5vo9.onrender.com/api/urls/all');
 //       setUrlList([]);
 //       setFilteredUrlList([]);
 //       setSnackbarOpen(true);
@@ -367,7 +367,7 @@ const URLList = () => {
     const fetchUrlList = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('https://url-shortener-ax8r.onrender.com/api/urls/url-list');
+        const response = await axios.get('https://url-backend-5vo9.onrender.com/api/urls/url-list');
         setUrlList(response.data);
         setTotalPages(Math.ceil(response.data.length / 10));
         setFilteredUrlList(response.data);
@@ -382,7 +382,7 @@ const URLList = () => {
 
   const handleDeleteUrl = async (urlId) => {
     try {
-      const response = await axios.delete(`https://url-shortener-ax8r.onrender.com/api/urls/${urlId}`);
+      const response = await axios.delete(`https://url-backend-5vo9.onrender.com/api/urls/${urlId}`);
       console.log('Delete response:', response.data);
   
       const updatedUrlList = urlList.filter((url) => url._id !== urlId);
@@ -400,7 +400,7 @@ const URLList = () => {
 
   // const handleBulkDelete = async () => {
   //   try {
-  //     await axios.delete('https://url-shortener-ax8r.onrender.com/api/urls/bulk', { data: { urlIds: selectedUrls } });
+  //     await axios.delete('https://url-backend-5vo9.onrender.com/api/urls/bulk', { data: { urlIds: selectedUrls } });
   //     const updatedUrlList = urlList.filter((url) => !selectedUrls.includes(url._id));
   //     setUrlList(updatedUrlList);
   //     setFilteredUrlList(updatedUrlList);
@@ -414,7 +414,7 @@ const URLList = () => {
 
   const handleBulkDelete = async () => {
     try {
-      await axios.delete('https://url-shortener-ax8r.onrender.com/api/urls/bulk', { data: { urlIds: selectedUrls } });
+      await axios.delete('https://url-backend-5vo9.onrender.com/api/urls/bulk', { data: { urlIds: selectedUrls } });
       
       // Filter out deleted URLs
       const updatedUrlList = urlList.filter((url) => !selectedUrls.includes(url._id));
@@ -436,7 +436,7 @@ const URLList = () => {
 
   const handleDeleteAll = async () => {
     try {
-      await axios.delete('https://url-shortener-ax8r.onrender.com/api/urls/all');
+      await axios.delete('https://url-backend-5vo9.onrender.com/api/urls/all');
       setUrlList([]);
       setFilteredUrlList([]);
       setSnackbarOpen(true);

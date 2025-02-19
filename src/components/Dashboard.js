@@ -12,7 +12,7 @@
 //   React.useEffect(() => {
 //     const fetchDashboardData = async () => {
 //       try {
-//         const response = await axios.get('https://url-shortener-ax8r.onrender.com/api/urls/dashboard');
+//         const response = await axios.get('https://url-backend-5vo9.onrender.com/api/urls/dashboard');
 //         setDashboardData(response.data);
 //       } catch (error) {
 //         setError('Server Error');
@@ -27,7 +27,7 @@
 //     setIsLoading(true);
 //     setError(null);
 //     try {
-//       const response = await axios.get('https://url-shortener-ax8r.onrender.com/api/urls/dashboard');
+//       const response = await axios.get('https://url-backend-5vo9.onrender.com/api/urls/dashboard');
 //       setDashboardData(response.data);
 //     } catch (error) {
 //       setError('Server Error');
@@ -107,7 +107,7 @@ const Dashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await axios.get('https://url-shortener-ax8r.onrender.com/api/urls/dashboard');
+      const response = await axios.get('https://url-backend-5vo9.onrender.com/api/urls/dashboard');
       setDashboardData(response.data);
       setSuccess(true);
     } catch (error) {

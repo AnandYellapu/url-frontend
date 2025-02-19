@@ -13,8 +13,8 @@ const ForgotPassword = () => {
 
   const handleForgotPassword = async () => {
     try {
-      // https://url-shortener-ax8r.onrender.com
-      const response = await axios.post('https://url-shortener-ax8r.onrender.com/api/users/forgot-password', { email });
+      // https://url-backend-5vo9.onrender.com
+      const response = await axios.post('https://url-backend-5vo9.onrender.com/api/users/forgot-password', { email });
       setSnackbarMessage(response.data.message);
       setSnackbarMessage('Password reset link sent to email. Please check your inbox.');
       setSnackbarIcon(<CheckCircle />);

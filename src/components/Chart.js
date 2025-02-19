@@ -14,7 +14,7 @@ export default function Chart() {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://url-shortener-ax8r.onrender.com/api/urls/chart');
+        const response = await axios.get('https://url-backend-5vo9.onrender.com/api/urls/chart');
         const { dailyURLs, monthlyURLs } = response.data;
         setDailyData(formatDailyData(dailyURLs));
         setMonthlyData(formatMonthlyData(monthlyURLs));

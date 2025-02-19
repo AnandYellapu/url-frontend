@@ -11,7 +11,7 @@ const ActivationLink = () => {
 
   const activateAccount = useCallback(async () => {
     try {
-      const response = await axios.get(`https://url-shortener-ax8r.onrender.com/api/users/activate/${token}`);
+      const response = await axios.get(`https://url-backend-5vo9.onrender.com/api/users/activate/${token}`);
       setMessage(response.data.message);
 
       // Check if the activation is successful and navigate to login

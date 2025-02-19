@@ -15,7 +15,7 @@ const UserCharts = () => {
   const fetchData = async () => {
     try {
       const authToken = localStorage.getItem('authToken');
-      const response = await axios.get('https://url-shortener-ax8r.onrender.com/api/urls/user-charts', {
+      const response = await axios.get('https://url-backend-5vo9.onrender.com/api/urls/user-charts', {
         headers: { Authorization: `Bearer ${authToken}` },
       });
   
